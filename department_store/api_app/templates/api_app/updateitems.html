@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST" id="itemsupdate" action="{% url 'store:item' items.id %}">
+{{items.name}}
+{% csrf_token %}
+    Item id you wish to update:
+    Id:{{items.id}}
+    <br>
+    Insert item values
+Name:<input type="text" name="name" placeholder={{items.name}}>
+Description<input type="text" name="description" placeholder={{items.description}}>
+Price<input type="text" name="marked_rate" placeholder={{items.marked_rate}}>
+category id<input type="text" name="category" placeholder={{items.category}} >
+
+    <button type="submit" class="btn btn-primary" name="update">Update</button>
+    <button type="submit" class="btn btn-primary" name="delete">Delete</button>
+
+
+</form>
+
+
+
+
+</body>
+</html>

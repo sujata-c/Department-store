@@ -1,0 +1,25 @@
+<form method="POST" action="/api/store">
+    {% csrf_token %}
+    id:<input type="text" name="id">
+    Name:<input type="text" name="name">
+        Description<input type="text" name="description">
+        Price<input type="text" name="marked_rate">
+      <label for="category">Choose a category:</label>
+      <select name="category" id="category" >
+          <option selected="selected" disabled>Objects on page:</option>
+      {% for cat in category %}
+        <option value="{{ cat.id }}">{{ cat.name }}</option>
+      {% endfor %}
+      </select>
+
+    <input type="submit" value="Add Item" />
+</form>
+
+<div>
+    {% for item in items %}
+        <div>
+            <a href="{% url 'store:item' item.id %}"> {{item.name}}</a>
+            <hr>
+        </div>
+    {% endfor %}
+</div>
