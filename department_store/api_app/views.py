@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from rest_framework.decorators import api_view
 # from .models import Items
+from rest_framework.parsers import JSONParser
 from .serializers import *
 from django.http.response import JsonResponse
 from django.views import View
@@ -24,6 +25,7 @@ class ItemList(View):
         return render(request, 'api_app/itemhome.html', context)
 
     def post(self, request):
+        # item_data = JSONParser().parse(request)
         item_data = {
             'id': request.POST['id'],
             'name': request.POST['name'],
@@ -34,7 +36,7 @@ class ItemList(View):
         if item_serializer.is_valid():
             item_serializer.save()
             # return JsonResponse(item_serializer.data, status=status.HTTP_201_CREATED)
-            return redirect('/api/store')
+            return redirect('/api/items')
         return JsonResponse(item_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -66,11 +68,13 @@ class ItemModify(View):
         if "delete" in request.POST:
             item.delete()
             # return JsonResponse({'message': 'Item was deleted successfully!'}, status=status.HTTP_204_NO_CONTENT)
-            return redirect('/api/store')
+            return redirect('/api/items')
 
 
 # category crud
 class CategoryList(View):
+    """ Get Category by ID: api/categories
+        Create Category """
     def get(self, request):
         category = Category.objects.all()
         cat_serializer = CategorySerializer(category, many=True)
@@ -97,8 +101,13 @@ class CategoryList(View):
 class CategoryModify(View):
     pass
 
+# Supplier db CRUD operations using built-in CBV
+
 
 class SupplierBase(View):
+    """Base class to avoid declaring models, fields, success url repeatedly.
+    Inherited by other Supplier Crud Classes
+    """
     model = Suppliers
     fields = '__all__'
     template_name = 'api_app/suppliers_list.html'
@@ -106,20 +115,25 @@ class SupplierBase(View):
 
 
 class SupplierList(SupplierBase, ListView):
+    """List all available suppliers"""
     template_name = 'api_app/suppliers_list.html'
 
 
 class SupplierDetail(SupplierBase, DetailView):
+    """ List Supplier By ID"""
     template_name = 'api_app/supplier_detail.html'
 
 
 class SupplierCreate(SupplierBase, CreateView):
+    """ Create new Supplier """
     template_name = 'api_app/supplier_create.html'
 
 
 class SupplierUpdate(SupplierBase, UpdateView):
+    " Update Existing supplier by ID"
     template_name = 'api_app/supplier_update.html'
 
 
 class SupplierDelete(SupplierBase, DeleteView):
+    """ Delete supplier by ID"""
     template_name = 'api_app/supplier_delete.html'

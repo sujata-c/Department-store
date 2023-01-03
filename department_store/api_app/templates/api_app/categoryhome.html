@@ -3,13 +3,14 @@
     id:<input type="text" name="id">
     Name:<input type="text" name="name">
     Description<input type="text" name="description">
-    <input type="submit" value="Add Item" />
+    <input type="submit" value="Add Category" />
 </form>
 
 <div>
     {% for cat in category %}
         <div>
-            <a href="{% url 'store:category' cat.id %}"> {{cat.name}}</a>
+            <!--<a href="{% url 'store:category' cat.id %}"> {{cat.name}}</a>-->
+            {{cat.name}}
             <hr>
         </div>
     {% endfor %}
