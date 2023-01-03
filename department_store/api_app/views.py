@@ -13,7 +13,10 @@ from rest_framework import status
 
 # Class based views for Items CRUD
 class ItemList(View):
-
+    """
+    Get available items in the store
+    Add new item
+    """
     def get(self, request):
         items = Items.objects.all().order_by('-name')
         category = Category.objects.all()
@@ -41,7 +44,11 @@ class ItemList(View):
 
 
 class ItemModify(View):
-
+    """
+    Get Item by Id
+    Update Item
+    Delete Item
+    """
     def get(self, request, pk=None):
         item = Items.objects.get(pk=pk)
         item_serializer = ItemListSerializer(item)
@@ -63,7 +70,7 @@ class ItemModify(View):
             if item_serializer.is_valid():
                 item_serializer.save()
                 # return JsonResponse(item_serializer.data)
-                return redirect('/api/store')
+                return redirect('/api/items')
             return JsonResponse(item_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         if "delete" in request.POST:
             item.delete()
@@ -73,8 +80,10 @@ class ItemModify(View):
 
 # category crud
 class CategoryList(View):
-    """ Get Category by ID: api/categories
-        Create Category """
+    """
+    Get all available Categories : api/categories
+    Create Category
+    """
     def get(self, request):
         category = Category.objects.all()
         cat_serializer = CategorySerializer(category, many=True)
@@ -101,11 +110,11 @@ class CategoryList(View):
 class CategoryModify(View):
     pass
 
+
 # Supplier db CRUD operations using built-in CBV
-
-
 class SupplierBase(View):
-    """Base class to avoid declaring models, fields, success url repeatedly.
+    """
+    Base class to avoid declaring models, fields, success url repeatedly.
     Inherited by other Supplier Crud Classes
     """
     model = Suppliers

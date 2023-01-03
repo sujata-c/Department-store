@@ -13,8 +13,8 @@ re_path(r'^api/category/(?P<pk>100|[1-9]?[0-9]+)$', views.CategoryModify.as_view
 
 # built-in class based views calling
 path('api/suppliers/', views.SupplierList.as_view(), name='suppliers_list'),
-path('api/suppliers/<int:pk>/detail', views.SupplierDetail.as_view(), name='supplier_detail'),
-path('api/suppliers/create/', views.SupplierCreate.as_view(), name='supplier_create'),
-path('api/suppliers/<int:pk>/update/', views.SupplierUpdate.as_view(), name='supplier_update'),
-path('api/suppliers/<int:pk>/delete/', views.SupplierDelete.as_view(), name='supplier_delete'),
+path('api/supplier/<int:pk>/detail', views.SupplierDetail.as_view(), name='supplier_detail'),
+path('api/supplier/create/', views.SupplierCreate.as_view(), name='supplier_create'),
+path('api/supplier/<int:pk>/update/', views.SupplierUpdate.as_view(), name='supplier_update'),
+path('api/supplier/<int:pk>/delete/', views.SupplierDelete.as_view(), name='supplier_delete'),
 ]
