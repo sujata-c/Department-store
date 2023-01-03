@@ -78,26 +78,47 @@ Successfully implemented CRUD operations on Item, Category and Supplier tables.
   
   1. Template response:
   
-  [(<img width="923" alt="get_items_temp" src="https://user-images.githubusercontent.com/76721836/210322756-87689071-9a64-44dc-9978-228930218fb7.PNG">)]
+  Get Items:
   
-  [(<img width="927" alt="get_item_temp" src="https://user-images.githubusercontent.com/76721836/210322798-82587b19-0fe6-4c4b-ba9d-78845f75a68f.PNG">)]
+  <img width="923" alt="get_items_temp" src="https://user-images.githubusercontent.com/76721836/210322756-87689071-9a64-44dc-9978-228930218fb7.PNG">
   
-  [(<img width="926" alt="create_item_temp" src="https://user-images.githubusercontent.com/76721836/210322846-aecd4d02-ef7a-446c-ae81-2d62c27c2afd.PNG">)]
+  Get item by Id:
+  
+  <img width="927" alt="get_item_temp" src="https://user-images.githubusercontent.com/76721836/210322798-82587b19-0fe6-4c4b-ba9d-78845f75a68f.PNG">
+  
+  Create Item:
+  
+  <img width="923" alt="create_item_temp" src="https://user-images.githubusercontent.com/76721836/210323621-35eac844-4b63-4fb8-8ece-f62fa0abb7a0.PNG">
+  
+  Created item:
+  
+  <img width="918" alt="created_item_temp" src="https://user-images.githubusercontent.com/76721836/210324171-6971ba79-d78c-48f5-ad8f-1a68b079706c.PNG">
+  
   
   
   
   
   2. Postman JSON response [NOTE: api endpoint is now changed to api/items]
   
-  ![(<img width="865" alt="get_items1" src="https://user-images.githubusercontent.com/76721836/210321401-9f8404c4-d206-4062-a5bc-c440abfeb4e5.PNG">)]
+  Get items:
   
-  ![(<img width="872" alt="get_item" src="https://user-images.githubusercontent.com/76721836/210321767-244bcfcb-badd-45e4-a81a-cd9668f191b6.PNG">)]
+  <img width="865" alt="get_items1" src="https://user-images.githubusercontent.com/76721836/210321401-9f8404c4-d206-4062-a5bc-c440abfeb4e5.PNG">
   
-  ![(<img width="881" alt="create_item" src="https://user-images.githubusercontent.com/76721836/210322657-08b64c3e-c992-453f-aa8d-f9d6433b954d.PNG">)]
+  Get item by Id:
   
-  ![(<img width="886" alt="update_item" src="https://user-images.githubusercontent.com/76721836/210321828-b4096503-ea8d-4814-89fb-45788a24008a.PNG">)]
+  <img width="872" alt="get_item" src="https://user-images.githubusercontent.com/76721836/210321767-244bcfcb-badd-45e4-a81a-cd9668f191b6.PNG">
   
-  ![(<img width="896" alt="delete_item" src="https://user-images.githubusercontent.com/76721836/210321873-a037fc6e-c88e-4719-b5b2-5eba27bbd707.PNG">)]
+  Create Item:
+  
+  <img width="881" alt="create_item" src="https://user-images.githubusercontent.com/76721836/210322657-08b64c3e-c992-453f-aa8d-f9d6433b954d.PNG">
+  
+  Update Item:
+  
+  <img width="886" alt="update_item" src="https://user-images.githubusercontent.com/76721836/210321828-b4096503-ea8d-4814-89fb-45788a24008a.PNG">
+  
+  Delete Item:
+  
+  <img width="896" alt="delete_item" src="https://user-images.githubusercontent.com/76721836/210321873-a037fc6e-c88e-4719-b5b2-5eba27bbd707.PNG">
   
  
   
