@@ -68,11 +68,7 @@ Successfully implemented CRUD operations on Item, Category and Supplier tables.
   > cd department_store/
   
   >  python3 manage.py runserver
-  
- ### Code walkthrough : 
-  
-  > 
-  
+   
  
  ### API call output:
   
@@ -120,5 +116,12 @@ Successfully implemented CRUD operations on Item, Category and Supplier tables.
   
   <img width="896" alt="delete_item" src="https://user-images.githubusercontent.com/76721836/210321873-a037fc6e-c88e-4719-b5b2-5eba27bbd707.PNG">
   
+ 
+ ## References:
+ 
+ [Django](https://docs.djangoproject.com/en/4.1/)
+ 
+ [Class based views](https://www.geeksforgeeks.org/class-based-generic-views-django-create-retrieve-update-delete/?ref=lbp)
+ 
  
   
